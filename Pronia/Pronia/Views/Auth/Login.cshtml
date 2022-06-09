@@ -1,0 +1,45 @@
+﻿@using Pronia.ViewModel.Authorization
+@model LoginVM
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="login-register-area section-space-y-axis-100">
+    <div class="container">
+        <div class="col-lg-6 pt-5 pt-lg-0 m-auto">
+            <form method="post" asp-action="Login">
+                <div class="login-form">
+                    <h4 class="login-title">Login</h4>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label asp-for="UserNameOrEmail">Email Address Or User Name</label>
+                            <input asp-for="UserNameOrEmail" placeholder="Email Address Or UserName">
+                            <span asp-validation-for="UserNameOrEmail"></span>
+                        </div>
+                        <div class="col-lg-12">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" placeholder="Password">
+                            <span asp-validation-for="Password"></span>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="check-box">
+                                <input asp-for="RememberMe">
+                                <label asp-for="RememberMe">Remember me</label>
+                                <span class="text-danger" asp-validation-for="RememberMe"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 pt-1 mt-md-0">
+                            <div class="forgotton-password_info">
+                                <a asp-action="Register">need a new account?</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 pt-5">
+                            <button type="submit" class="btn btn-custom-size lg-size btn-pronia-primary">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
